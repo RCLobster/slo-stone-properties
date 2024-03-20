@@ -28,13 +28,12 @@ export const createGroup = (groupName) => {
   });
 };
 
-export const updateGroup = (groupName, applicant) => {
+export const updateGroup = (applicant) => {
   return fetch('/api/groups', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },
-    groupName: JSON.stringify(groupName),
     body: JSON.stringify(applicant),
   });
 };
