@@ -6,22 +6,33 @@ const AppNavbar = () => {
 
   return (
     <>
-    <Navbar expand="lg" className="justify-content-center">
+      <Navbar expand="lg" className="justify-content-center">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav justify-content-center">
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+            <Nav.Link href="/documents">Documents</Nav.Link>
             <NavDropdown title="Properties" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/patricia214">214 Patricia</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
+              <NavDropdown.Item href="/patricia214">
+                214 Patricia
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Item href="/patricia226">
+                226 Patricia
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">
+                205 Craig
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">
+                Boulder, Colorado
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">
+                242 Patricia
+              </NavDropdown.Item>
             </NavDropdown>
+            <Nav.Link href="/contact">Contact Us</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-    </Navbar>
+      </Navbar>
     </>
   );
 };
