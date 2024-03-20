@@ -19,3 +19,14 @@ h6 {
 .navbar{
   width: 100%;
 }
+
+.carousel {
+  max-width: 50%;
+  height: 50%;
+  aspect-ratio: 16/9;
+}
+
+.carousel img {
+  width: 100%;
+  height: 75%;
+}
