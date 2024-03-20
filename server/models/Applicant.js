@@ -82,4 +82,4 @@ applicantSchema.pre('save', async function (next) {
   next();
 });
 
-module.exports = applicantSchemaSchema;
+module.exports = applicantSchema;
