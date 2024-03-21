@@ -11,25 +11,19 @@ function Patricia214() {
 
 
     return (
-        <div>
+        <div className='propertyParent'>
             <h2>214 Patricia, San Luis Obispo, 93405</h2>
-            <img className="mainImg" src="../content/properties/214-patricia/Front-of-house.jpg" />
+            <img className="mainPropImg" src="../content/properties/214-patricia/Front-of-house.jpg" />
 
             <Carousel className="carousel">
 
                 {imgLinks.map((image) => {
-                    return(
-                    <Carousel.Item key={image.index}>
-                        <img src={image} />
-                    </Carousel.Item>
-                )})};
-
-                {/* <Carousel.Item>
-                    <img src='../content/properties/214-patricia/Bath2.jpg' />
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img src='../content/properties/214-patricia/Bedroom1.jpg' />
-                </Carousel.Item> */}
+                    return (
+                        <Carousel.Item key={image.index}>
+                            <img className='caroImg' src={image} />
+                        </Carousel.Item>
+                    )
+                })}
 
             </Carousel>
         </div>
