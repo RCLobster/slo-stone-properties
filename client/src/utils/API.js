@@ -8,12 +8,12 @@ export const loginUser = (userData) => {
   });
 };
 
-export const getGroups = (token) => {
+export const getGroups = () => {
   return fetch('/api/groups', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      authorization: `Bearer ${token}`,
+      // authorization: `Bearer ${token}`,
     },
   });
 };
