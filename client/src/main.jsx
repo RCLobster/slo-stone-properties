@@ -12,6 +12,8 @@ import Application from './pages/Application.jsx'
 import Documents from './pages/Documents.jsx'
 import Patricia214 from './pages/properties/Patricia214.jsx'
 import Patricia226 from './pages/properties/Patricia226.jsx'
+import Craig205 from './pages/properties/Craig205.jsx'
+import Patricia242 from './pages/properties/Patricia242.jsx'
 
 const router = createBrowserRouter([
   {
@@ -43,6 +45,12 @@ const router = createBrowserRouter([
       }, {
         path: '/patricia226',
         element: <Patricia226 />
+      }, {
+        path: '/craig205',
+        element: <Craig205 />
+      }, {
+        path: '/patricia242',
+        element: <Patricia242 />
       }
     ]
   }
