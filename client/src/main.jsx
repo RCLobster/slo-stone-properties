@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import App from './App.jsx'
 import NotFound from './pages/NotFound.jsx'
 import Admin from './pages/admin/Admin.jsx'
+import AdminLogin from './pages/admin/AdminLogin.jsx'
 import Home from './pages/Home'
 import ContactUs from './pages/ContactUs'
 import Application from './pages/Application.jsx'
@@ -23,6 +24,9 @@ const router = createBrowserRouter([
       }, {
         path: '/admin',
         element: <Admin />
+      }, {
+        path: '/admin/login',
+        element: <AdminLogin />
       }, {
         path: '/contact',
         element: <ContactUs />
