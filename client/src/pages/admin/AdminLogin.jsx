@@ -2,7 +2,8 @@ import LoginForm from "../../components/LoginForm"
 
 function AdminLogin() {
     return(
-        <div>Admin Login page
+        <div className="admin-login fade-in">
+            <h3>Admin Login</h3>
             <LoginForm />
         </div>
     )

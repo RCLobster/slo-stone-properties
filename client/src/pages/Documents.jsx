@@ -4,7 +4,7 @@ function Documents() {
 
 
     return (
-        <div className='document-parent'>
+        <div className='fade-in document-parent'>
             <h2>Important Documents</h2>
             <div className='downloadElements'>
                 <div className="downloadBtn mb-2">

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function ContactUs() {
     return (
-        <main className="flex-parent contact-page">
+        <main className="flex-parent fade-in contact-page">
             <h3>Contact Us</h3>
             <Link to="mailto:LorrieStone@mac.com">      
             <svg id="email" width="3vw" height="3vh" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
