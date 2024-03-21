@@ -57,11 +57,18 @@ header{
 }
 
 footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   z-index: 3;
   width: 100%;
   background-color: var(--navBar-bg);
-  padding: 0rem 0rem 1rem 1rem;
+  padding-left: 1rem;
   height: 10vh;
+}
+
+footer a{
+  text-decoration: none;
 }
 
 .navbar-collapse{
@@ -121,6 +128,7 @@ footer{
   align-items: center;
 }
 
+
 .excavator {
   max-width: 30%;
 }
@@ -155,4 +163,11 @@ footer{
 .downloadElements {
   display: flex;
   flex-direction: wrap;
+
+.contact-page h3,
+.contact-page a{
+  margin: 1rem 0;
+  text-decoration: none;
+  color: black;
+
 }

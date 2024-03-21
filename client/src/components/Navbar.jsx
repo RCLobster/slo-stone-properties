@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
 
 const AppNavbar = () => {
@@ -12,6 +10,7 @@ const AppNavbar = () => {
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/documents">Documents</Nav.Link>
+            <Nav.Link href="/application">Apply Now</Nav.Link>
             <NavDropdown title="Properties" id="basic-nav-dropdown">
               <NavDropdown.Item href="/patricia214">
                 214 Patricia

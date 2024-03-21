@@ -1,6 +1,10 @@
+import LoginForm from "../../components/LoginForm"
+
 function AdminLogin() {
     return(
-        <div>Admin Login page</div>
+        <div>Admin Login page
+            <LoginForm />
+        </div>
     )
 };
 
