@@ -19,13 +19,10 @@ const AppNavbar = () => {
               <NavDropdown.Item href="/patricia226">
                 226 Patricia
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">
+              <NavDropdown.Item href="/craig205">
                 205 Craig
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">
-                Boulder, Colorado
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">
+              <NavDropdown.Item href="/patricia242">
                 242 Patricia
               </NavDropdown.Item>
             </NavDropdown>
