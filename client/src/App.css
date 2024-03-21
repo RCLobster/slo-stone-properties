@@ -163,6 +163,7 @@ footer a{
 .downloadElements {
   display: flex;
   flex-direction: wrap;
+}
 
 .contact-page h3,
 .contact-page a{
