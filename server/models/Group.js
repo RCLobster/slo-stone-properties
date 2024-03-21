@@ -9,10 +9,10 @@ const groupSchema = new Schema(
             required: true,
             unique: true,
         },
-        // property: {
-        //     type: String,
-        //     required: true,
-        // },
+        property: {
+            type: String,
+            required: true,
+        },
         applicants: [applicantSchema],
     },
 );

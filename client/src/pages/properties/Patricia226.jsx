@@ -1,7 +1,7 @@
 import Property from "../../components/Property";
 
-function Patricia214() {
-    const imgLinks = [
+function Patricia226() {
+    const imgLinks=[
         '../content/properties/214-patricia/Patio.jpg',
         '../content/properties/214-patricia/Bath2.jpg',
         '../content/properties/214-patricia/Bathroom.jpg',
@@ -14,20 +14,18 @@ function Patricia214() {
         '../content/properties/214-patricia/Kitchen-from-LR.jpg',
         '../content/properties/214-patricia/Kitchen.jpg',
         '../content/properties/214-patricia/Living-room.jpg',
-    ];
-
+    ]
+    
     return(
         <Property 
             caroImgs={imgLinks}
-            address="214 Patricia, San Luis Obispo, 93405"
-            mainImg={'../content/properties/214-patricia/Front-of-house.jpg'}
-            descTitle={'Charming Open Concept Home'}
-            descBody={`A one-story 1600 sq' single family home with Bishop's Peak in the background. The home has 4 bedrooms/3 bathrooms, hardwood floors, central heat, washer/dryer and kitchen appliances included, detached 1 car garage (lots of street parking) and yard.  Up to 5 occupants`}
-            floorPlanImg={'../content/properties/214-patricia/House-Plan.jpg'}
+            address="226 Patricia, San Luis Obispo, 93405"
+            mainImg={'../content/properties/226-patricia/house-from-street.jpg'}
+            descTitle={'Title'}
+            descBody={'Words'}
+            floorPlanImg={'../content/properties/226-patricia/226-Floor-Plan.jpg'}
         />
     )
 };
 
-
-
-export default Patricia214;
+export default Patricia226;

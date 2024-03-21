@@ -1,3 +1,8 @@
+:root {
+  --navBar-bg: #fdf7df;
+  --page-bg: #f1c79e;
+}
+
 html, body{
   overflow-x: hidden;
 }
@@ -6,6 +11,7 @@ body {
   margin: 0;
   padding-top: 12vh;
   width: 100vw;
+  background-color: var(--page-bg);
 }
 
 .flex-parent{
@@ -29,6 +35,7 @@ body {
   display: flex;
   justify-content: center;
   z-index: 1;
+  color: white;
 }
 
 /* #home-pic{
@@ -40,7 +47,7 @@ body {
 
 header{
   text-align: center;
-  background-color: beige;
+  background-color: var(--navBar-bg);
   position: fixed;
   top: 0;
   left: 0;
@@ -52,7 +59,7 @@ header{
 footer{
   z-index: 3;
   width: 100%;
-  background-color: beige;
+  background-color: var(--navBar-bg);
   padding: 0rem 0rem 1rem 1rem;
   height: 10vh;
 }
@@ -67,24 +74,37 @@ footer{
   justify-content: center;
   align-content: center;
   flex-flow: column wrap;
-  background-color: rgb(208, 177, 140);
+  background-color: var(--page-bg);
 }
 
 .propertyParent h2 {
   text-align: center;
-  margin: 0vh 2vh 2vw;
+  margin: 2vh 2vw;
+}
+
+.propertyParent h4 {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0vh 2vw;
+}
+
+.propDesc {
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
+  padding: 0vh 1vh 2vw;
 }
 
 .mainPropImg {
   margin: 0 auto;
-  padding: 1vh 1vw;
+  padding: 0vh 1vh 2vw;
   max-width: 75%;
 }
 
 .carousel {
   max-width: 75%;
   height: 700px;
-
+  margin: 0vh 1vh 2vw;
 }
 
 .carousel img {

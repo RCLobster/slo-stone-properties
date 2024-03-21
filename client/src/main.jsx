@@ -11,6 +11,7 @@ import ContactUs from './pages/ContactUs'
 import Application from './pages/Application.jsx'
 import Documents from './pages/Documents.jsx'
 import Patricia214 from './pages/properties/Patricia214.jsx'
+import Patricia226 from './pages/properties/Patricia226.jsx'
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,9 @@ const router = createBrowserRouter([
       }, {
         path: '/patricia214',
         element: <Patricia214 />
+      }, {
+        path: '/patricia226',
+        element: <Patricia226 />
       }
     ]
   }

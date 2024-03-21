@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap';
+import { Form, FormSelect, Button, Alert } from 'react-bootstrap';
 
 import { createGroup, updateGroup } from '../utils/API';
 
@@ -8,6 +8,7 @@ function Application() {
     // set initial form state
     const [userFormData, setUserFormData] = useState({
         groupName: '',
+        property: '',
         name: '',
         school: '',
         graduation: '',
@@ -47,12 +48,11 @@ function Application() {
         }
 
         try {
-            const response = await createGroup(userFormData);
-            const response1 = await updateGroup(userFormData);
+            const responseG = await createGroup(userFormData);
+            const responseA = await updateGroup(userFormData);
 
-            const groupR = await response.json();
-            const applicant = await response1.json();
-            console.log(groupR);
+            const groupR = await responseG.json();
+            const applicant = await responseA.json();
             console.log(applicant);
         } catch (err) {
             console.error(err);
@@ -61,6 +61,7 @@ function Application() {
 
         setUserFormData({
             groupName: '',
+            property: '',
             name: '',
             school: '',
             graduation: '',
@@ -103,6 +104,23 @@ function Application() {
                         required
                     />
                     <Form.Control.Feedback type='invalid'>Group name is required!</Form.Control.Feedback>
+                </Form.Group>
+
+                <Form.Group className='mb-3' controlId="formBasicSelect">
+                    <Form.Label>Property*</Form.Label>
+                    <Form.Control
+                        as="select" 
+                        name='property'
+                        onChange={handleInputChange}
+                        value={userFormData.property}
+                        required
+                    >
+                    <option>Select a property</option>
+                    <option value="214 Patricia">214 Patricia</option>
+                    <option value="226 Patricia">226 Patricia</option>
+                    <option value="205 Craig">205 Craig</option>
+                    <option value="242 Patricia">242 Patricia</option>
+                    </Form.Control>
                 </Form.Group>
 
                 <Form.Group className='mb-3'>
