@@ -62,13 +62,34 @@ footer{
   flex-grow: 0;
 }
 
+.propertyParent {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-flow: column wrap;
+  background-color: rgb(208, 177, 140);
+}
+
+.propertyParent h2 {
+  text-align: center;
+  margin: 0vh 2vh 2vw;
+}
+
+.mainPropImg {
+  margin: 0 auto;
+  padding: 1vh 1vw;
+  max-width: 75%;
+}
+
 .carousel {
-  max-width: 50%;
-  height: 50%;
-  aspect-ratio: 16/9;
+  max-width: 75%;
+  height: 700px;
+
 }
 
 .carousel img {
-  width: 100%;
-  height: 75%;
+  min-width: 100%;
+  max-width: 100%;
+  max-height: 700px;
+  object-fit: contain;
 }
