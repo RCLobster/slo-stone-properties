@@ -14,6 +14,10 @@ body {
   background-color: var(--page-bg);
 }
 
+.flex-parent{
+  display: flex;
+}
+
 .home{
   height: 78vh;
   background-image: url(../content/images/homepage1.JPG);
@@ -49,7 +53,7 @@ header{
   left: 0;
   width: 100vw;
   z-index: 3;
-  height: 12vh;
+  min-height: 12vh;
 }
 
 footer{
@@ -108,4 +112,11 @@ footer{
   max-width: 100%;
   max-height: 700px;
   object-fit: contain;
+}
+
+.contact-page{
+  height: 78vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
