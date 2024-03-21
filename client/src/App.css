@@ -67,24 +67,37 @@ footer{
   justify-content: center;
   align-content: center;
   flex-flow: column wrap;
-  background-color: rgb(208, 177, 140);
+  background-color: #F5E1BA;
 }
 
 .propertyParent h2 {
   text-align: center;
-  margin: 0vh 2vh 2vw;
+  margin: 2vh 2vw;
+}
+
+.propertyParent h4 {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0vh 2vw;
+}
+
+.propDesc {
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
+  padding: 0vh 1vh 2vw;
 }
 
 .mainPropImg {
   margin: 0 auto;
-  padding: 1vh 1vw;
+  padding: 0vh 1vh 2vw;
   max-width: 75%;
 }
 
 .carousel {
   max-width: 75%;
   height: 700px;
-
+  margin: 0vh 1vh 2vw;
 }
 
 .carousel img {
