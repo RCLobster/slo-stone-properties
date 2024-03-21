@@ -1,3 +1,8 @@
+:root {
+  --navBar-bg: #fdf7df;
+  --page-bg: #f1c79e;
+}
+
 html, body{
   overflow-x: hidden;
 }
@@ -7,6 +12,7 @@ body {
   margin: 0;
   padding-top: 7rem;
   width: 100vw;
+  background-color: var(--page-bg);
 }
 
 .home{
@@ -38,12 +44,11 @@ body {
   bottom: 0;
   z-index: 3;
   width: 100%;
-  background-color: beige;
 }
 
 header{
   text-align: center;
-  background-color: beige;
+  background-color: var(--navBar-bg);
   position: fixed;
   top: 0;
   left: 0;
@@ -54,7 +59,7 @@ header{
 footer{
   z-index: 3;
   width: 100%;
-  background-color: beige;
+  background-color: var(--navBar-bg);
 }
 
 .navbar-collapse{
@@ -67,7 +72,7 @@ footer{
   justify-content: center;
   align-content: center;
   flex-flow: column wrap;
-  background-color: #F5E1BA;
+  background-color: var(--page-bg);
 }
 
 .propertyParent h2 {
