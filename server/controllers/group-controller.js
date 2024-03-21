@@ -9,19 +9,19 @@ module.exports = {
           res.status(500).json(err);
         }
       },
-      async createGroup(req, res) {
+      async createGroup({body}, res) {
         try {
-          const group = await Group.create(req.body);
+          const group = await Group.create(body);
           res.json(group);
         } catch (err) {
           console.log(err);
           return res.status(500).json(err);
         }
       },
-      async updateGroup({groupName, body}, res) {
+      async updateGroup({body}, res) {
         try {
           const group = await Group.findOneAndUpdate(
-            { groupName: groupName },
+            { groupName: body.groupName },
             { $addToSet: { applicants : body } },
             { runValidators: true, new: true }
           );
