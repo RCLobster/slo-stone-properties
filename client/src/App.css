@@ -120,3 +120,39 @@ footer{
   justify-content: center;
   align-items: center;
 }
+
+.excavator {
+  max-width: 30%;
+}
+
+.document-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 40vh;
+  width: 98%;
+}
+
+.document-parent h2 {
+  width: 98%;
+  text-align: center;
+  padding: 1vh 1vw;
+}
+
+.downloadBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  text-align: center;
+  border: solid 2px black;
+  border-radius: 8px;
+  padding: 1vh 1vw;
+  margin: 1vh 1vw
+}
+
+.downloadElements {
+  display: flex;
+  flex-direction: wrap;
+}
