@@ -7,6 +7,6 @@ const {
 
 const { authMiddleware } = require('../../utils/auth');
 
-router.route('/groups').post(createGroup).put(updateGroup).get(authMiddleware, getGroups);
+router.route('/').post(createGroup).put(updateGroup).get(authMiddleware, getGroups);
 
 module.exports = router;

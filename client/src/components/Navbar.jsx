@@ -3,36 +3,36 @@ import { Link } from 'react-router-dom';
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
 
 const AppNavbar = () => {
-  // set modal display state
-  const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-      <Container>
-        <Navbar expand="lg" className="navbar bg-body-tertiary">
-          <Container>
-            <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="me-auto">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#link">Link</Nav.Link>
-                <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">
-                    Another action
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">
-                    Separated link
-                  </NavDropdown.Item>
-                </NavDropdown>
-              </Nav>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
-      </Container>
+      <Navbar expand="lg" className="justify-content-center">
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav justify-content-center">
+          <Nav className="me-auto">
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/documents">Documents</Nav.Link>
+            <NavDropdown title="Properties" id="basic-nav-dropdown">
+              <NavDropdown.Item href="/patricia214">
+                214 Patricia
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/patricia226">
+                226 Patricia
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">
+                205 Craig
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">
+                Boulder, Colorado
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">
+                242 Patricia
+              </NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Link href="/contact">Contact Us</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     </>
   );
 };

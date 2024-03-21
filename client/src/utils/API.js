@@ -1,13 +1,3 @@
-export const getGroups = (token) => {
-  return fetch('/api/groups', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      authorization: `Bearer ${token}`,
-    },
-  });
-};
-
 export const loginUser = (userData) => {
   return fetch('/api/users/login', {
     method: 'POST',
@@ -18,24 +8,32 @@ export const loginUser = (userData) => {
   });
 };
 
+export const getGroups = (token) => {
+  return fetch('/api/groups', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      authorization: `Bearer ${token}`,
+    },
+  });
+};
+
 export const createGroup = (groupName) => {
   return fetch('/api/groups', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(groupName),
   });
 };
 
-export const updateGroup = (groupName) => {
+export const updateGroup = (applicant) => {
   return fetch('/api/groups', {
-    method: 'POST',
+    method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
-      authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify(groupName),
+    body: JSON.stringify(applicant),
   });
 };
