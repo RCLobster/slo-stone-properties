@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Form, FormSelect, Button, Alert } from 'react-bootstrap';
+import { Form, Button, Alert } from 'react-bootstrap';
 
 import { createGroup, updateGroup } from '../utils/API';
 
@@ -85,13 +85,9 @@ function Application() {
 
     return (
         <>
-            <p>All fields marked with * are required.</p>
+            <h3>All fields marked with * are required.</h3>
             {/* This is needed for the validation functionality above */}
             <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
-                {/* show alert if server response is bad */}
-                <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
-                    Something went wrong with your application!
-                </Alert>
 
                 <Form.Group className='mb-3'>
                     <Form.Label htmlFor='groupName'>Group Name* (Make sure the name matches for all members)</Form.Label>
@@ -119,7 +115,7 @@ function Application() {
                     <option value="214 Patricia">214 Patricia</option>
                     <option value="226 Patricia">226 Patricia</option>
                     <option value="205 Craig">205 Craig</option>
-                    <option value="242 Patricia">242 Patricia</option>
+                    {/* <option value="242 Patricia">242 Patricia</option> */}
                     </Form.Control>
                 </Form.Group>
 
@@ -343,11 +339,16 @@ function Application() {
                     />
                 </Form.Group>
 
+                <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
+                    Something went wrong with your application!
+                </Alert>
+
                 <Button
                     type='submit'
                     variant='success'>
                     Submit
                 </Button>
+                
             </Form>
         </>
     );
