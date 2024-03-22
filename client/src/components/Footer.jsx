@@ -7,9 +7,9 @@ const Footer =() => {
         <footer>
             <p>Copyright © 2024 SLO Stone Properties, LLC - All Rights Reserved.</p>
             {Auth.loggedIn() ? (
-                <Link onClick={Auth.logout}>Admin Logout</Link>
+                <Link id="login"  onClick={Auth.logout}>Admin Logout</Link>
             ) : (
-            <Link to="/admin/login">Admin Login</Link>
+            <Link id="login" to="/admin/login">Admin Login</Link>
             )}
         </footer>
         </>
