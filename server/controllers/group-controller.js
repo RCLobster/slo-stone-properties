@@ -17,11 +17,7 @@ module.exports = {
             { runValidators: true, upsert: true, new: true }
           );
     
-          if (!group) {
-            res.status(404).json({ message: 'No group with this name!' });
-          }
-    
-          res.json(group);
+          res.json('Success!');
         } catch (err) {
           res.status(500).json(err);
         }

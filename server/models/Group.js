@@ -15,7 +15,16 @@ const groupSchema = new Schema(
         },
         applicants: [applicantSchema],
     },
+    {
+        toJSON: {
+          virtuals: true,
+        },
+    }
 );
+
+groupSchema.virtual('applicantCount').get(function () {
+    return this.applicants.length;
+  });
 
 const Group = model('Group', groupSchema);
 

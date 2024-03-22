@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap';
+import { Form, Button, Alert, Toast } from 'react-bootstrap';
 
 import { updateGroup } from '../utils/API';
 
@@ -32,6 +32,7 @@ function Application() {
     const [validated] = useState(false);
     // set state for alert
     const [showAlert, setShowAlert] = useState(false);
+    const [showToast, setShowToast] = useState(false);
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -56,6 +57,8 @@ function Application() {
             console.error(err);
             setShowAlert(true);
         }
+
+        setShowToast(true);
 
         setUserFormData({
             groupName: '',
@@ -353,6 +356,10 @@ function Application() {
                     </Button>
 
                 </Form>
+
+                <Toast onClose={() => setShowToast(false)} show={showToast} delay={3000} autohide>
+                    <Toast.Body>Application submitted!</Toast.Body>
+                </Toast>
             </div>
         </>
     );
