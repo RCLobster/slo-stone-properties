@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
     Container,
     Card,
@@ -13,20 +14,30 @@ import { getGroups } from '../../utils/API';
 
 function Admin() {
     const [groupData, setGroupData] = useState({});
+    const navigate = useNavigate();
+
 
     // use this to determine if `useEffect()` hook needs to run again
     const groupDataLength = Object.keys(groupData).length;
 
+    // if the user is NOT logged in, redirect them to /login
+    useEffect(() => {
+        if (!Auth.loggedIn()) {
+            navigate('/admin/login');
+        }
+    }, [navigate]);
+
+
     useEffect(() => {
         const getGroupData = async () => {
             try {
-                // const token = Auth.loggedIn() ? Auth.getToken() : null;
+                const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-                // if (!token) {
-                //     return false;
-                // }
+                if (!token) {
+                    return false;
+                }
 
-                const response = await getGroups();
+                const response = await getGroups(token);
 
                 if (!response.ok) {
                     throw new Error('something went wrong!');
@@ -42,9 +53,11 @@ function Admin() {
         getGroupData();
     }, [groupDataLength]);
 
-if (!groupDataLength) {
-    return <h2>LOADING...</h2>;
-  }
+    if (!Auth.loggedIn()) return null;
+
+    if (!groupDataLength) {
+        return <h2>LOADING...</h2>;
+    }
     return (
         <>
             <div fluid className="text-light bg-dark p-5">
@@ -56,32 +69,35 @@ if (!groupDataLength) {
                 <Row>
                     {groupData.map((group) => {
                         return (
-                            <Col md="4">
+                            <Col md="9">
                                 <Card key={group._id} border='dark'>
                                     <Card.Body>
-                                        <Card.Title>{group.groupName}</Card.Title>
-                                        <Card.Text>Property: {group.property}</Card.Text>
+                                        <Card.Title><strong>Group Name: </strong>{group.groupName}</Card.Title>
+                                        <Card.Text><strong>Property:</strong> {group.property}</Card.Text>
+                                        <Card.Text><strong>Group size:</strong> {group.applicantCount}</Card.Text>
                                         {group.applicants.map((applicant) => {
                                             return (
-                                                <Col md="4" key={applicant.name}>
-                                                    <Card.Text>{applicant.name}</Card.Text>
-                                                    <Card.Text>{applicant.school}</Card.Text>
-                                                    <Card.Text>{applicant.graduation}</Card.Text>
-                                                    <Card.Text>{applicant.phone}</Card.Text>
-                                                    <Card.Text>{applicant.driversLicense}</Card.Text>
+                                                <Col md="4" key={applicant._id}>
+                                                    <Card.Text><strong>Applicant Name:</strong> {applicant.name}</Card.Text>
+                                                    <Card.Text><strong>School:</strong> {applicant.school}</Card.Text>
+                                                    <Card.Text><strong>Anticipated Graduation:</strong> {applicant.graduation}</Card.Text>
+                                                    <Card.Text><strong>Phone #:</strong> {applicant.phone}</Card.Text>
+                                                    <Card.Text><strong>Email:</strong> {applicant.driversLicense}</Card.Text>
                                                     <Card.Text>{applicant.ssn}</Card.Text>
-                                                    <Card.Text>{applicant.parent1Name}</Card.Text>
-                                                    <Card.Text>{applicant.parent1Address}</Card.Text>
-                                                    <Card.Text>{applicant.parent1Phone}</Card.Text>
-                                                    <Card.Text>{applicant.parent1Email}</Card.Text>
-                                                    {applicant.parent2Name ? (<Card.Text>{applicant.parent2Name}</Card.Text>): (<></> )}
-                                                    {applicant.parent2Address ? (<Card.Text>{applicant.parent2Address}</Card.Text>): (<></> )}
-                                                    {applicant.parent2Phone ? (<Card.Text>{applicant.parent2Phone}</Card.Text>): (<></> )}
-                                                    {applicant.parent2Email ? (<Card.Text>{applicant.parent2Email}</Card.Text>): (<></> )}
-                                                    {applicant.employmentHistory ? (<Card.Text>{applicant.employmentHistory}</Card.Text>): (<></> )}
-                                                    {applicant.scholarshipsFA ? (<Card.Text>{applicant.scholarshipsFA}</Card.Text>): (<></> )}
-                                                    {applicant.other ? (<Card.Text>{applicant.other}</Card.Text>): (<></> )}
+                                                    <Card.Text><strong>1st Parent's Name:</strong> {applicant.parent1Name}</Card.Text>
+                                                    <Card.Text><strong>1st Parent's Address:</strong> {applicant.parent1Address}</Card.Text>
+                                                    <Card.Text><strong>1st Parent's Phone #:</strong> {applicant.parent1Phone}</Card.Text>
+                                                    <Card.Text><strong>1st Parent's Email:</strong> {applicant.parent1Email}</Card.Text>
+                                                    {applicant.parent2Name ? (<Card.Text><strong>2nd Parent's Name:</strong> {applicant.parent2Name}</Card.Text>) : (<></>)}
+                                                    {applicant.parent2Address ? (<Card.Text><strong>2nd Parent's Address:</strong> {applicant.parent2Address}</Card.Text>) : (<></>)}
+                                                    {applicant.parent2Phone ? (<Card.Text><strong>2nd Parent's Phone #:</strong> {applicant.parent2Phone}</Card.Text>) : (<></>)}
+                                                    {applicant.parent2Email ? (<Card.Text><strong>2nd Parent's Email:</strong> {applicant.parent2Email}</Card.Text>) : (<></>)}
+                                                    {applicant.employmentHistory ? (<Card.Text><strong>Employment History:</strong> {applicant.employmentHistory}</Card.Text>) : (<></>)}
+                                                    {applicant.scholarshipsFA ? (<Card.Text><strong>Scholarships/Financial Aid:</strong> {applicant.scholarshipsFA}</Card.Text>) : (<></>)}
+                                                    {applicant.other ? (<Card.Text><strong>Other:</strong> {applicant.other}</Card.Text>) : (<></>)}
+                                                    <Card.Text>----</Card.Text>
                                                 </Col>
+                                                
                                             );
                                         })}
                                     </Card.Body>
