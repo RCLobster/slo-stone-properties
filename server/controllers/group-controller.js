@@ -9,21 +9,12 @@ module.exports = {
           res.status(500).json(err);
         }
       },
-      async createGroup({body}, res) {
-        try {
-          const group = await Group.create(body);
-          res.json(group);
-        } catch (err) {
-          console.log(err);
-          return res.status(500).json(err);
-        }
-      },
       async updateGroup({body}, res) {
         try {
           const group = await Group.findOneAndUpdate(
-            { groupName: body.groupName },
+            { groupName: body.groupName, property: body.property },
             { $addToSet: { applicants : body } },
-            { runValidators: true, new: true }
+            { runValidators: true, upsert: true, new: true }
           );
     
           if (!group) {
