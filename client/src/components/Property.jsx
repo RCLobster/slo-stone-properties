@@ -13,7 +13,7 @@ export default function Property({ address, mainImg, caroImgs, floorPlanImg, des
                 {caroImgs.map((image) => {
                     return (
                         <Carousel.Item key={image.index}>
-                            <img className='caroImg' src={image} />
+                                <img className='caroImg' src={image} />
                         </Carousel.Item>
                     )
                 })}
