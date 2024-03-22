@@ -41,7 +41,10 @@ function Admin() {
 
         getGroupData();
     }, [groupDataLength]);
-console.log(groupData)
+
+if (!groupDataLength) {
+    return <h2>LOADING...</h2>;
+  }
     return (
         <>
             <div fluid className="text-light bg-dark p-5">
@@ -57,15 +60,30 @@ console.log(groupData)
                                 <Card key={group._id} border='dark'>
                                     <Card.Body>
                                         <Card.Title>{group.groupName}</Card.Title>
-                                        <p className='small'>Property: {group.property}</p>
-                                        {/* {group.applicants.map((applicant) => {
+                                        <Card.Text>Property: {group.property}</Card.Text>
+                                        {group.applicants.map((applicant) => {
                                             return (
-                                                <Col md="3">
+                                                <Col md="4" key={applicant.name}>
                                                     <Card.Text>{applicant.name}</Card.Text>
-                                                    <Card.Text>{applicant.name}</Card.Text>
+                                                    <Card.Text>{applicant.school}</Card.Text>
+                                                    <Card.Text>{applicant.graduation}</Card.Text>
+                                                    <Card.Text>{applicant.phone}</Card.Text>
+                                                    <Card.Text>{applicant.driversLicense}</Card.Text>
+                                                    <Card.Text>{applicant.ssn}</Card.Text>
+                                                    <Card.Text>{applicant.parent1Name}</Card.Text>
+                                                    <Card.Text>{applicant.parent1Address}</Card.Text>
+                                                    <Card.Text>{applicant.parent1Phone}</Card.Text>
+                                                    <Card.Text>{applicant.parent1Email}</Card.Text>
+                                                    {applicant.parent2Name ? (<Card.Text>{applicant.parent2Name}</Card.Text>): (<></> )}
+                                                    {applicant.parent2Address ? (<Card.Text>{applicant.parent2Address}</Card.Text>): (<></> )}
+                                                    {applicant.parent2Phone ? (<Card.Text>{applicant.parent2Phone}</Card.Text>): (<></> )}
+                                                    {applicant.parent2Email ? (<Card.Text>{applicant.parent2Email}</Card.Text>): (<></> )}
+                                                    {applicant.employmentHistory ? (<Card.Text>{applicant.employmentHistory}</Card.Text>): (<></> )}
+                                                    {applicant.scholarshipsFA ? (<Card.Text>{applicant.scholarshipsFA}</Card.Text>): (<></> )}
+                                                    {applicant.other ? (<Card.Text>{applicant.other}</Card.Text>): (<></> )}
                                                 </Col>
                                             );
-                                        })} */}
+                                        })}
                                     </Card.Body>
                                 </Card>
                             </Col>
