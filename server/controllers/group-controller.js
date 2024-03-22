@@ -17,7 +17,7 @@ module.exports = {
             { runValidators: true, upsert: true, new: true }
           );
     
-          res.json(group);
+          res.json('Success!');
         } catch (err) {
           res.status(500).json(err);
         }
