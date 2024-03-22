@@ -18,16 +18,6 @@ export const getGroups = () => {
   });
 };
 
-export const createGroup = (groupName) => {
-  return fetch('/api/groups', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(groupName),
-  });
-};
-
 export const updateGroup = (applicant) => {
   return fetch('/api/groups', {
     method: 'PUT',

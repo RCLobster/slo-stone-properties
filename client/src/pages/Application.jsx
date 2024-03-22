@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 
-import { createGroup, updateGroup } from '../utils/API';
+import { updateGroup } from '../utils/API';
 
 function Application() {
 
@@ -48,10 +48,8 @@ function Application() {
         }
 
         try {
-            const responseG = await createGroup(userFormData);
             const responseA = await updateGroup(userFormData);
 
-            const groupR = await responseG.json();
             const applicant = await responseA.json();
             console.log(applicant);
         } catch (err) {
