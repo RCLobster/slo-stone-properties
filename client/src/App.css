@@ -248,6 +248,18 @@ footer a{
   min-height: 105vh;
 }
 
+.admin-parent {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.admin-group {
+  width: 100%;
+}
+
+
 
 @keyframes fadeIn {
   0%{
