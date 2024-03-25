@@ -88,24 +88,24 @@ function Application() {
         <>
             <div className='flex-parent application-page fade-in'>
                 <h3>All fields marked with * are required.</h3>
-                {/* This is needed for the validation functionality above */}
+                <h4>Make sure the group name is unique and matches for all members.</h4>
                 <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
 
                     <Form.Group className='mb-3'>
-                        <Form.Label htmlFor='groupName'>Group Name* (Make sure the name matches for all members)</Form.Label>
+                        <Form.Label htmlFor='groupName'><strong>Group Name*</strong></Form.Label>
                         <Form.Control
                             type='text'
                             placeholder='The name of the group you are applying with'
                             name='groupName'
                             onChange={handleInputChange}
-                            value={userFormData.groupName}
+                            value={userFormData.groupName.toLocaleUpperCase()}
                             required
                         />
                         <Form.Control.Feedback type='invalid'>Group name is required!</Form.Control.Feedback>
                     </Form.Group>
 
                     <Form.Group className='mb-3' controlId="formBasicSelect">
-                        <Form.Label>Property*</Form.Label>
+                        <Form.Label><strong>Property*</strong></Form.Label>
                         <Form.Control
                             as="select"
                             name='property'
@@ -122,10 +122,10 @@ function Application() {
                     </Form.Group>
 
                     <Form.Group className='mb-3'>
-                        <Form.Label htmlFor='name'>Name*</Form.Label>
+                        <Form.Label htmlFor='name'><strong>Name*</strong></Form.Label>
                         <Form.Control
                             type='text'
-                            placeholder='Your name'
+                            placeholder='Name'
                             name='name'
                             onChange={handleInputChange}
                             value={userFormData.name}
@@ -135,10 +135,10 @@ function Application() {
                     </Form.Group>
 
                     <Form.Group className='mb-3'>
-                        <Form.Label htmlFor='school'>School Attending*</Form.Label>
+                        <Form.Label htmlFor='school'><strong>School Attending*</strong></Form.Label>
                         <Form.Control
                             type='text'
-                            placeholder='Your school'
+                            placeholder='School'
                             name='school'
                             onChange={handleInputChange}
                             value={userFormData.school}
@@ -148,10 +148,10 @@ function Application() {
                     </Form.Group>
 
                     <Form.Group className='mb-3'>
-                        <Form.Label htmlFor='graduation'>Anticipated Graduation Date*</Form.Label>
+                        <Form.Label htmlFor='graduation'><strong>Anticipated Graduation Date*</strong></Form.Label>
                         <Form.Control
                             type='text'
-                            placeholder='Your graduation date'
+                            placeholder='Graduation date'
                             name='graduation'
                             onChange={handleInputChange}
                             value={userFormData.graduation}
@@ -161,10 +161,10 @@ function Application() {
                     </Form.Group>
 
                     <Form.Group className='mb-3'>
-                        <Form.Label htmlFor='phone'>Phone*</Form.Label>
+                        <Form.Label htmlFor='phone'><strong>Phone*</strong></Form.Label>
                         <Form.Control
                             type='text'
-                            placeholder='Your phone #'
+                            placeholder='Phone #'
                             name='phone'
                             onChange={handleInputChange}
                             value={userFormData.phone}
@@ -174,23 +174,23 @@ function Application() {
                     </Form.Group>
 
                     <Form.Group className='mb-3'>
-                        <Form.Label htmlFor='email'>Email*</Form.Label>
+                        <Form.Label htmlFor='email'><strong>Email*</strong></Form.Label>
                         <Form.Control
                             type='email'
-                            placeholder='Your email address'
+                            placeholder='Email'
                             name='email'
                             onChange={handleInputChange}
-                            value={userFormData.email}
+                            value={userFormData.email.trim()}
                             required
                         />
                         <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback>
                     </Form.Group>
 
                     <Form.Group className='mb-3'>
-                        <Form.Label htmlFor='driversLicense'>Driver's License*</Form.Label>
+                        <Form.Label htmlFor='driversLicense'><strong>Driver's License*</strong></Form.Label>
                         <Form.Control
                             type='text'
-                            placeholder='Your DL #, enter N/A if none'
+                            placeholder='DL #, enter N/A if none'
                             name='driversLicense'
                             onChange={handleInputChange}
                             value={userFormData.driversLicense}
@@ -200,10 +200,10 @@ function Application() {
                     </Form.Group>
 
                     <Form.Group className='mb-3'>
-                        <Form.Label htmlFor='ssn'>Social Security Number*</Form.Label>
+                        <Form.Label htmlFor='ssn'><strong>Social Security Number*</strong></Form.Label>
                         <Form.Control
                             type='text'
-                            placeholder='Your SSN'
+                            placeholder='SSN'
                             name='ssn'
                             onChange={handleInputChange}
                             value={userFormData.ssn}
@@ -213,7 +213,7 @@ function Application() {
                     </Form.Group>
 
                     <Form.Group className='mb-3'>
-                        <Form.Label htmlFor='parent1Name'>1st Parent Name*</Form.Label>
+                        <Form.Label htmlFor='parent1Name'><strong>1st Parent Name*</strong></Form.Label>
                         <Form.Control
                             type='text'
                             placeholder='1st parent name'
@@ -226,7 +226,7 @@ function Application() {
                     </Form.Group>
 
                     <Form.Group className='mb-3'>
-                        <Form.Label htmlFor='parent1Address'>1st Parent Address*</Form.Label>
+                        <Form.Label htmlFor='parent1Address'><strong>1st Parent Address*</strong></Form.Label>
                         <Form.Control
                             type='text'
                             placeholder='1st parent address'
@@ -239,7 +239,7 @@ function Application() {
                     </Form.Group>
 
                     <Form.Group className='mb-3'>
-                        <Form.Label htmlFor='parent1Phone'>1st Parent Phone*</Form.Label>
+                        <Form.Label htmlFor='parent1Phone'><strong>1st Parent Phone*</strong></Form.Label>
                         <Form.Control
                             type='text'
                             placeholder='1st parent phone #'
@@ -252,20 +252,20 @@ function Application() {
                     </Form.Group>
 
                     <Form.Group className='mb-3'>
-                        <Form.Label htmlFor='parent1Email'>1st Parent Email*</Form.Label>
+                        <Form.Label htmlFor='parent1Email'><strong>1st Parent Email*</strong></Form.Label>
                         <Form.Control
                             type='email'
                             placeholder='1st parent email'
                             name='parent1Email'
                             onChange={handleInputChange}
-                            value={userFormData.parent1Email}
+                            value={userFormData.parent1Email.trim()}
                             required
                         />
                         <Form.Control.Feedback type='invalid'>Parent's email is required!</Form.Control.Feedback>
                     </Form.Group>
 
                     <Form.Group className='mb-3'>
-                        <Form.Label htmlFor='parent2Name'>2nd Parent Name</Form.Label>
+                        <Form.Label htmlFor='parent2Name'><strong>2nd Parent Name</strong></Form.Label>
                         <Form.Control
                             type='text'
                             placeholder='2nd parent name'
@@ -276,7 +276,7 @@ function Application() {
                     </Form.Group>
 
                     <Form.Group className='mb-3'>
-                        <Form.Label htmlFor='parent2Address'>2nd Parent Address</Form.Label>
+                        <Form.Label htmlFor='parent2Address'><strong>2nd Parent Address</strong></Form.Label>
                         <Form.Control
                             type='text'
                             placeholder='2nd parent address'
@@ -287,7 +287,7 @@ function Application() {
                     </Form.Group>
 
                     <Form.Group className='mb-3'>
-                        <Form.Label htmlFor='parent2Phone'>2nd Parent Phone</Form.Label>
+                        <Form.Label htmlFor='parent2Phone'><strong>2nd Parent Phone</strong></Form.Label>
                         <Form.Control
                             type='text'
                             placeholder='2nd parent phone #'
@@ -298,7 +298,7 @@ function Application() {
                     </Form.Group>
 
                     <Form.Group className='mb-3'>
-                        <Form.Label htmlFor='parent2Email'>2nd Parent Email</Form.Label>
+                        <Form.Label htmlFor='parent2Email'><strong>2nd Parent Email</strong></Form.Label>
                         <Form.Control
                             type='email'
                             placeholder='2nd parent email'
@@ -309,11 +309,11 @@ function Application() {
                     </Form.Group>
 
                     <Form.Group className='mb-3'>
-                        <Form.Label htmlFor='employmentHistory'>Employment History</Form.Label>
+                        <Form.Label htmlFor='employmentHistory'><strong>Employment History</strong></Form.Label>
                         <Form.Control
                             as="textarea"
                             type='text'
-                            placeholder='Your employment history if applicable'
+                            placeholder='Employment history if applicable'
                             name='employmentHistory'
                             onChange={handleInputChange}
                             value={userFormData.employmentHistory}
@@ -321,11 +321,11 @@ function Application() {
                     </Form.Group>
 
                     <Form.Group className='mb-3'>
-                        <Form.Label htmlFor='scholarshipsFA'>Scholarships/Financial Aid</Form.Label>
+                        <Form.Label htmlFor='scholarshipsFA'><strong>Scholarships/Financial Aid</strong></Form.Label>
                         <Form.Control
                             as="textarea"
                             type='text'
-                            placeholder='Your scholarships or finincial aid if applicable'
+                            placeholder='Scholarships or finincial aid if applicable'
                             name='scholarshipsFA'
                             onChange={handleInputChange}
                             value={userFormData.scholarshipsFA}
@@ -333,7 +333,7 @@ function Application() {
                     </Form.Group>
 
                     <Form.Group className='mb-3'>
-                        <Form.Label htmlFor='other'>Other</Form.Label>
+                        <Form.Label htmlFor='other'><strong>Other</strong></Form.Label>
                         <Form.Control
                             as="textarea"
                             type='text'

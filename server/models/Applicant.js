@@ -6,61 +6,76 @@ const applicantSchema = new Schema({
   name: {
     type: String,
     required: true,
+    trim: true,
   },
   school: {
     type: String,
     required: true,
+    trim: true,
   },
   graduation: {
     type: String,
     required: true,
+    trim: true,
   },
   phone: {
     type: String,
     required: true,
+    trim: true,
   },
   email: {
     type: String,
     required: true,
     match: [/.+@.+\..+/, 'Must use a valid email address'],
+    trim: true,
   },
   driversLicense: {
     type: String,
     required: true,
+    trim: true,
   },
   ssn: {
     type: String,
     required: true,
+    trim: true,
   },
   parent1Name: {
     type: String,
     required: true,
+    trim: true,
   },
   parent1Address: {
     type: String,
     required: true,
+    trim: true,
   },
   parent1Phone: {
     type: String,
     required: true,
+    trim: true,
   },
   parent1Email: {
     type: String,
     required: true,
     match: [/.+@.+\..+/, 'Must use a valid email address'],
+    trim: true,
   },
   parent2Name: {
     type: String,
+    trim: true,
   },
   parent2Address: {
     type: String,
+    trim: true,
   },
   parent2Phone: {
     type: String,
+    trim: true,
   },
   parent2Email: {
     type: String,
     match: [/.+@.+\..+/, 'Must use a valid email address'],
+    trim: true,
   },
   employmentHistory: {
     type: String,

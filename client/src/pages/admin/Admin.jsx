@@ -72,17 +72,17 @@ function Admin() {
             </div>
             <Container>
                 <Row>
-                    {groupData.map((group) => {
+                    {groupData.map((group, index) => {
                         return (
                             <Col md="9">
-                                <Card key={group._id} border='dark'>
+                                <Card key={index} border='dark'>
                                     <Card.Body>
                                         <Card.Title><strong>Group Name: </strong>{group.groupName}</Card.Title>
                                         <Card.Text><strong>Property:</strong> {group.property}</Card.Text>
                                         <Card.Text><strong>Group size:</strong> {group.applicantCount}</Card.Text>
-                                        {group.applicants.map((applicant) => {
+                                        {group.applicants.map((applicant, index) => {
                                             return (
-                                                <Col md="4" key={applicant._id}>
+                                                <Col md="4" key={index}>
                                                     <Card.Text><strong>Applicant Name:</strong> {applicant.name}</Card.Text>
                                                     <Card.Text><strong>School:</strong> {applicant.school}</Card.Text>
                                                     <Card.Text><strong>Anticipated Graduation:</strong> {applicant.graduation}</Card.Text>
