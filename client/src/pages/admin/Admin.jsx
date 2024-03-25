@@ -1,11 +1,12 @@
-import { useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
     Container,
     Card,
     Button,
     Row,
-    Col
+    Col,
+    Modal
 } from 'react-bootstrap';
 import Auth from '../../utils/auth';
 
@@ -14,6 +15,10 @@ import { getGroups } from '../../utils/API';
 
 function Admin() {
     const [groupData, setGroupData] = useState({});
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     const navigate = useNavigate();
 
 
@@ -96,8 +101,26 @@ function Admin() {
                                                     {applicant.scholarshipsFA ? (<Card.Text><strong>Scholarships/Financial Aid:</strong> {applicant.scholarshipsFA}</Card.Text>) : (<></>)}
                                                     {applicant.other ? (<Card.Text><strong>Other:</strong> {applicant.other}</Card.Text>) : (<></>)}
                                                     <Card.Text>----</Card.Text>
+                                                    <Button variant="danger" onClick={handleShow}>
+                                                        Delete Group
+                                                    </Button>
+
+                                                    <Modal show={show} onHide={handleClose}>
+                                                        <Modal.Header closeButton>
+                                                            <Modal.Title>Delete Group</Modal.Title>
+                                                        </Modal.Header>
+                                                        <Modal.Body>Are you sure you want to delete this group? This cannot be undone.</Modal.Body>
+                                                        <Modal.Footer>
+                                                            <Button variant="secondary" onClick={handleClose}>
+                                                                Close
+                                                            </Button>
+                                                            <Button variant="danger" onClick={handleClose}>
+                                                                Yes, I'm sure
+                                                            </Button>
+                                                        </Modal.Footer>
+                                                    </Modal>
                                                 </Col>
-                                                
+
                                             );
                                         })}
                                     </Card.Body>

@@ -1,10 +1,12 @@
 :root {
   --navBar-bg: #fdf7df;
+  --dropDown-hover: #888888;
   --page-bg: #fedcc0;
 }
 
 html, body{
   overflow-x: hidden;
+  color: #000000;
 }
 
 body {
@@ -54,6 +56,15 @@ header{
   width: 100vw;
   z-index: 3;
   min-height: 12vh;
+}
+
+.dropdown-menu {
+  background-color: var(--navBar-bg);
+}
+
+.dropdown-item:hover{
+  background-color: var(--dropDown-hover);
+  transition: ease-in-out .1s;
 }
 
 footer{
@@ -112,11 +123,19 @@ footer a{
 
 .carousel {
   max-width: 90%;
-  height: fit-content;
+  height: 700px;
   margin: 0vh 1vh 2vw;
   display: flex;
   align-items: center;
   aspect-ratio: 16 / 9;
+}
+
+.carousel-control-next-icon{
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='currentColor'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e")
+}
+
+.carousel-control-prev-icon{
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='currentColor'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
 }
 
 .carousel img {

@@ -1,4 +1,5 @@
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
+import Auth from '../utils/auth';
 
 const AppNavbar = () => {
 
@@ -26,6 +27,12 @@ const AppNavbar = () => {
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="/contact">Contact Us</Nav.Link>
+            {Auth.loggedIn() ? (
+              <Nav.Link href="/admin">Admin</Nav.Link>
+            ) : (
+              <></>
+            )}
+
           </Nav>
         </Navbar.Collapse>
       </Navbar>
