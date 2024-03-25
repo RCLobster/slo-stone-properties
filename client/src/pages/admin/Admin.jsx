@@ -93,40 +93,43 @@ function Admin() {
                     <h1>Viewing all groups.</h1>
                 </Container>
             </div>
-            <Container>
+            <Container >
                 <Row>
                     {groupData.map((group) => {
                         return (
-                            <Col md="9" className='admin-parent'>
+                            <Col className='admin-parent'>
                                 <Card key={group._id} border='dark' >
                                     <Card.Body >
-                                        <Card.Title><strong>Group Name: </strong>{group.groupName}</Card.Title>
-                                        <Card.Text><strong>Property:</strong> {group.property}</Card.Text>
-                                        <Card.Text><strong>Group size:</strong> {group.applicantCount}</Card.Text>
-                                        {group.applicants.map((applicant) => {
-                                            return (
-                                                <Col md="4" className='admin-group' key={applicant._id}>
-                                                    <Card.Text><strong>Applicant Name:</strong> {applicant.name}</Card.Text>
-                                                    <Card.Text><strong>School:</strong> {applicant.school}</Card.Text>
-                                                    <Card.Text><strong>Anticipated Graduation:</strong> {applicant.graduation}</Card.Text>
-                                                    <Card.Text><strong>Phone #:</strong> {applicant.phone}</Card.Text>
-                                                    <Card.Text><strong>Email:</strong> {applicant.driversLicense}</Card.Text>
-                                                    <Card.Text>{applicant.ssn}</Card.Text>
-                                                    <Card.Text><strong>1st Parent's Name:</strong> {applicant.parent1Name}</Card.Text>
-                                                    <Card.Text><strong>1st Parent's Address:</strong> {applicant.parent1Address}</Card.Text>
-                                                    <Card.Text><strong>1st Parent's Phone #:</strong> {applicant.parent1Phone}</Card.Text>
-                                                    <Card.Text><strong>1st Parent's Email:</strong> {applicant.parent1Email}</Card.Text>
-                                                    {applicant.parent2Name ? (<Card.Text><strong>2nd Parent's Name:</strong> {applicant.parent2Name}</Card.Text>) : (<></>)}
-                                                    {applicant.parent2Address ? (<Card.Text><strong>2nd Parent's Address:</strong> {applicant.parent2Address}</Card.Text>) : (<></>)}
-                                                    {applicant.parent2Phone ? (<Card.Text><strong>2nd Parent's Phone #:</strong> {applicant.parent2Phone}</Card.Text>) : (<></>)}
-                                                    {applicant.parent2Email ? (<Card.Text><strong>2nd Parent's Email:</strong> {applicant.parent2Email}</Card.Text>) : (<></>)}
-                                                    {applicant.employmentHistory ? (<Card.Text><strong>Employment History:</strong> {applicant.employmentHistory}</Card.Text>) : (<></>)}
-                                                    {applicant.scholarshipsFA ? (<Card.Text><strong>Scholarships/Financial Aid:</strong> {applicant.scholarshipsFA}</Card.Text>) : (<></>)}
-                                                    {applicant.other ? (<Card.Text><strong>Other:</strong> {applicant.other}</Card.Text>) : (<></>)}
-                                                    <Card.Text>----</Card.Text>
-                                                </Col>
-                                            );
-                                        })}
+                                        <div className='admin-group-heading'>
+                                            <Card.Title><strong>Group Name: </strong>{group.groupName}</Card.Title>
+                                            <Card.Text><strong>Property:</strong> {group.property}</Card.Text>
+                                            <Card.Text><strong>Group size:</strong> {group.applicantCount}</Card.Text>
+                                        </div>
+                                        <Col className='admin-group' >
+                                            {group.applicants.map((applicant) => {
+                                                return (
+                                                    <div className='applicants' key={applicant._id}>
+                                                        <Card.Text><strong>Applicant Name:</strong> {applicant.name}</Card.Text>
+                                                        <Card.Text><strong>School:</strong> {applicant.school}</Card.Text>
+                                                        <Card.Text><strong>Anticipated Graduation:</strong> {applicant.graduation}</Card.Text>
+                                                        <Card.Text><strong>Phone #:</strong> {applicant.phone}</Card.Text>
+                                                        <Card.Text><strong>Email:</strong> {applicant.driversLicense}</Card.Text>
+                                                        <Card.Text>{applicant.ssn}</Card.Text>
+                                                        <Card.Text><strong>1st Parent's Name:</strong> {applicant.parent1Name}</Card.Text>
+                                                        <Card.Text><strong>1st Parent's Address:</strong> {applicant.parent1Address}</Card.Text>
+                                                        <Card.Text><strong>1st Parent's Phone #:</strong> {applicant.parent1Phone}</Card.Text>
+                                                        <Card.Text><strong>1st Parent's Email:</strong> {applicant.parent1Email}</Card.Text>
+                                                        {applicant.parent2Name ? (<Card.Text><strong>2nd Parent's Name:</strong> {applicant.parent2Name}</Card.Text>) : (<></>)}
+                                                        {applicant.parent2Address ? (<Card.Text><strong>2nd Parent's Address:</strong> {applicant.parent2Address}</Card.Text>) : (<></>)}
+                                                        {applicant.parent2Phone ? (<Card.Text><strong>2nd Parent's Phone #:</strong> {applicant.parent2Phone}</Card.Text>) : (<></>)}
+                                                        {applicant.parent2Email ? (<Card.Text><strong>2nd Parent's Email:</strong> {applicant.parent2Email}</Card.Text>) : (<></>)}
+                                                        {applicant.employmentHistory ? (<Card.Text><strong>Employment History:</strong> {applicant.employmentHistory}</Card.Text>) : (<></>)}
+                                                        {applicant.scholarshipsFA ? (<Card.Text><strong>Scholarships/Financial Aid:</strong> {applicant.scholarshipsFA}</Card.Text>) : (<></>)}
+                                                        {applicant.other ? (<Card.Text><strong>Other:</strong> {applicant.other}</Card.Text>) : (<></>)}
+                                                    </div>
+                                                );
+                                            })}
+                                        </Col>
                                     </Card.Body>
                                     <Button variant="danger" onClick={handleShow}>
                                         Delete Group
