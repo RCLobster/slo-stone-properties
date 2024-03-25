@@ -28,13 +28,12 @@ export const updateGroup = (applicant) => {
   });
 };
 
-export const deleteGroup = (token, group) => {
-  return fetch('/api/groups', {
+export const deleteGroup = (token, groupName) => {
+  return fetch(`/api/groups/${groupName}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
       authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify(group),
   });
 };

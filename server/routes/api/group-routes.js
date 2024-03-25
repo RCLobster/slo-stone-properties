@@ -7,6 +7,7 @@ const {
 
 const { authMiddleware } = require('../../utils/auth');
 
-router.route('/').put(updateGroup).get(authMiddleware,getGroups).delete(authMiddleware,deleteGroup);
+router.route('/').put(updateGroup).get(authMiddleware,getGroups);
+router.route('/:groupName').delete(authMiddleware,deleteGroup);
 
 module.exports = router;
