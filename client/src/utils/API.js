@@ -27,3 +27,14 @@ export const updateGroup = (applicant) => {
     body: JSON.stringify(applicant),
   });
 };
+
+export const deleteGroup = (token, group) => {
+  return fetch('/api/groups', {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(group),
+  });
+};
