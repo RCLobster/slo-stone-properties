@@ -249,14 +249,27 @@ footer a{
 }
 
 .admin-parent {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: auto;
+  min-width: 98%;
+  margin: 10px auto;
 }
 
 .admin-group {
-  width: 100%;
+  /* min-width: 800px; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+}
+
+.admin-group-heading {
+  text-align: center;
+  padding: 5px;
+}
+
+.applicants {
+  width: 49%;
+  border: 2px solid black;
+  padding: 5px;
+  margin: 2px;
 }
 
 
