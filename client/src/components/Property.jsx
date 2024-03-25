@@ -10,9 +10,9 @@ export default function Property({ address, mainImg, caroImgs, floorPlanImg, des
             <p className='propDesc'>{descBody}</p>
 
             <Carousel className="carousel">
-                {caroImgs.map((image) => {
+                {caroImgs.map((image, index) => {
                     return (
-                        <Carousel.Item key={image.index}>
+                        <Carousel.Item key={index}>
                                 <img className='caroImg' src={image} />
                         </Carousel.Item>
                     )
