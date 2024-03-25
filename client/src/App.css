@@ -231,6 +231,15 @@ footer a{
   height: 78vh;
 }
 
+#no-groups{
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 78vh;
+}
+
 .fade-in{
   animation: fadeIn 1s;
 }

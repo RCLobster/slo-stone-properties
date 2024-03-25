@@ -22,9 +22,10 @@ module.exports = {
           res.status(500).json(err);
         }
       },
-      async deleteGroup({ body }, res) {
+      async deleteGroup(req, res) {
+        const { groupName } = req.params;
         const deletedGroup = await Group.findOneAndDelete(
-          { groupName: body.groupName },
+          { groupName },
         );
         return res.json('Success!');
       },

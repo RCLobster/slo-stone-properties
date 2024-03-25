@@ -10,7 +10,7 @@ import {
 } from 'react-bootstrap';
 import Auth from '../../utils/auth';
 
-import { getGroups } from '../../utils/API';
+import { getGroups, deleteGroup } from '../../utils/API';
 
 
 function Admin() {
@@ -58,10 +58,33 @@ function Admin() {
         getGroupData();
     }, [groupDataLength]);
 
+    const deleteGroupData = async (groupName) => {
+        try {
+            const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+            if (!token) {
+                return false;
+            }
+
+            const response = await deleteGroup(token, groupName);
+
+            if (!response.ok) {
+                throw new Error('something went wrong!');
+            }
+
+            const group = await response.json();
+            const updatedGroups = groupData.filter(group => group.groupName !== groupName);
+            setGroupData(updatedGroups);
+            handleClose();
+        } catch (err) {
+            console.error(err);
+        }
+    };
+
     if (!Auth.loggedIn()) return null;
 
     if (!groupDataLength) {
-        return <h2>LOADING...</h2>;
+        return <h2 id='no-groups'>No Groups Found</h2>;
     }
     return (
         <>
@@ -101,29 +124,28 @@ function Admin() {
                                                     {applicant.scholarshipsFA ? (<Card.Text><strong>Scholarships/Financial Aid:</strong> {applicant.scholarshipsFA}</Card.Text>) : (<></>)}
                                                     {applicant.other ? (<Card.Text><strong>Other:</strong> {applicant.other}</Card.Text>) : (<></>)}
                                                     <Card.Text>----</Card.Text>
-                                                    <Button variant="danger" onClick={handleShow}>
-                                                        Delete Group
-                                                    </Button>
-
-                                                    <Modal show={show} onHide={handleClose}>
-                                                        <Modal.Header closeButton>
-                                                            <Modal.Title>Delete Group</Modal.Title>
-                                                        </Modal.Header>
-                                                        <Modal.Body>Are you sure you want to delete this group? This cannot be undone.</Modal.Body>
-                                                        <Modal.Footer>
-                                                            <Button variant="secondary" onClick={handleClose}>
-                                                                Close
-                                                            </Button>
-                                                            <Button variant="danger" onClick={handleClose}>
-                                                                Yes, I'm sure
-                                                            </Button>
-                                                        </Modal.Footer>
-                                                    </Modal>
                                                 </Col>
-
                                             );
                                         })}
                                     </Card.Body>
+                                    <Button variant="danger" onClick={handleShow}>
+                                        Delete Group
+                                    </Button>
+
+                                    <Modal show={show} onHide={handleClose}>
+                                        <Modal.Header closeButton>
+                                            <Modal.Title>Delete Group</Modal.Title>
+                                        </Modal.Header>
+                                        <Modal.Body>Are you sure you want to delete this group? This cannot be undone.</Modal.Body>
+                                        <Modal.Footer>
+                                            <Button variant="secondary" onClick={handleClose}>
+                                                Close
+                                            </Button>
+                                            <Button variant="danger" onClick={() => deleteGroupData(group.groupName)}>
+                                                Yes, I'm sure
+                                            </Button>
+                                        </Modal.Footer>
+                                    </Modal>
                                 </Card>
                             </Col>
                         );
