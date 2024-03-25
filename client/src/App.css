@@ -157,12 +157,15 @@ footer a{
 .excavator-page{
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   height: 78vh;
+  margin: auto;
 }
 
 .excavator {
   margin-top: 5vh;
-  max-width: 40%;
+  width: 40%;
+  max-height: 77vh;
 }
 
 .document-parent {
@@ -246,3 +249,37 @@ footer a{
     opacity: 1;
   }
 }
+
+@media (max-width: 1024px) {
+  .mainPropImg {
+    max-width: 95%;
+  }
+  .carousel {
+    max-width: 99%;
+    height: 425px;
+  }
+  .carousel img {
+    min-height: 400px; 
+  }
+  .excavator {
+    width: 75%;
+  }
+  .application-page h3{
+    width: 95%;
+    text-align: center;
+  }
+  .application-page form{
+    width: 95%;
+  }
+  .downloadElements {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .downloadBtn {
+    width: 80%;
+  }
+}
+
+/* @media (max-width: 768px) {
+
+} */
