@@ -113,8 +113,9 @@ function Admin() {
                                                         <Card.Text><strong>School:</strong> {applicant.school}</Card.Text>
                                                         <Card.Text><strong>Anticipated Graduation:</strong> {applicant.graduation}</Card.Text>
                                                         <Card.Text><strong>Phone #:</strong> {applicant.phone}</Card.Text>
-                                                        <Card.Text><strong>Email:</strong> {applicant.driversLicense}</Card.Text>
-                                                        <Card.Text>{applicant.ssn}</Card.Text>
+                                                        <Card.Text><strong>Email:</strong> {applicant.email}</Card.Text>
+                                                        <Card.Text><strong>Driver's License:</strong>{applicant.driversLicense}</Card.Text>
+                                                        <Card.Text><strong>SSN:</strong>{applicant.ssn}</Card.Text>
                                                         <Card.Text><strong>1st Parent's Name:</strong> {applicant.parent1Name}</Card.Text>
                                                         <Card.Text><strong>1st Parent's Address:</strong> {applicant.parent1Address}</Card.Text>
                                                         <Card.Text><strong>1st Parent's Phone #:</strong> {applicant.parent1Phone}</Card.Text>
